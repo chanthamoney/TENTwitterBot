@@ -1,0 +1,26 @@
+{
+  "name": "tentwitterbot",
+  "version": "1.0.0",
+  "description": "Ten from NCT twitter bot to practice twitter api's with node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chanthamoney/TENTwitterBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chanthamoney/TENTwitterBot/issues"
+  },
+  "homepage": "https://github.com/chanthamoney/TENTwitterBot#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "got": "^11.8.2",
+    "needle": "^2.8.0",
+    "oauth-1.0a": "^2.2.6",
+    "twitter": "^1.7.1"
+  }
+}
