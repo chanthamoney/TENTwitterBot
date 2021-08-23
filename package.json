@@ -22,5 +22,8 @@
     "needle": "^2.8.0",
     "oauth-1.0a": "^2.2.6",
     "twitter": "^1.7.1"
+  },
+  "devDependencies": {
+    "prettier": "2.3.2"
   }
 }
