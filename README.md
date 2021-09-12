@@ -1,2 +1,2 @@
 # Ten from NCT Twitter Bot
-Ten from NCT twitter bot to practice twitter api's with node js 
+Ten from NCT twitter bot that retweets, likes, and reply "YAS KING" to WayV_official and NCTsmtown when they mention "TEN"
