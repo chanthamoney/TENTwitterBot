@@ -22,6 +22,16 @@ const token = process.env.BEARER_TOKEN;
 
 const endpointUrl = "https://api.twitter.com/2/tweets/search/recent";
 
+// client.post(
+//   "statuses/update",
+//   { status: "I am a tweet" },
+//   function (error, tweet, response) {
+//     if (!error) {
+//       console.log(tweet);
+//     }
+//   }
+// );
+
 // gets the
 function retweet(tweetId) {
   client.post("statuses/retweet/" + tweetId, function (error, tweet, response) {
@@ -39,6 +49,11 @@ function likeTweet(tweetId) {
       console.log(error);
       if (!error) {
         console.log(tweet);
+      }
+      // so we don't reply to tweets we already replied too
+      if (error[0].code !== 139) {
+        console.log("we replied to the tweet");
+        replyTweet(tweetId);
       }
     }
   );
@@ -94,11 +109,9 @@ async function getRequest() {
     for (let i = 0; i < response.data.length; i++) {
       retweet(response.data[i].id);
       likeTweet(response.data[i].id);
-      replyTweet(response.data[i].id);
     }
   } catch (e) {
     console.log(e);
     process.exit(-1);
   }
-  // process.exit();
 })();
