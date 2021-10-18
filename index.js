@@ -51,7 +51,7 @@ function likeTweet(tweetId) {
         console.log(tweet);
       }
       // so we don't reply to tweets we already replied too
-      if (error[0].code !== 139) {
+      if (!error || error[0].code !== 139) {
         console.log("we replied to the tweet");
         replyTweet(tweetId);
       }
@@ -106,9 +106,11 @@ async function getRequest() {
   try {
     // Make request
     const response = await getRequest();
-    for (let i = 0; i < response.data.length; i++) {
-      retweet(response.data[i].id);
-      likeTweet(response.data[i].id);
+    if (response.data != undefined) {
+      for (let i = 0; i < response.data.length; i++) {
+        retweet(response.data[i].id);
+        likeTweet(response.data[i].id);
+      }
     }
   } catch (e) {
     console.log(e);
