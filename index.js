@@ -83,7 +83,8 @@ async function getRequest() {
   // specify a search query, and any additional fields that are required
   // by default, only the Tweet ID and text fields are returned
   const params = {
-    query: "TEN (from:WayV_official OR from:NCTsmtown) -is:retweet",
+    query:
+      "TEN (from:WayV_official OR from:NCTsmtown OR from:SMTOWNGLOBAL) -is:retweet",
     max_results: 100,
     "tweet.fields": "author_id",
   };
